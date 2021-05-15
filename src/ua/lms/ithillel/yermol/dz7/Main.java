@@ -13,7 +13,6 @@ public class Main {
         }
     }
 
-
     private static void whoWillGet(String name, int number) {
         map1.put(number, name);
         if (map.containsKey(number)) {
@@ -24,7 +23,7 @@ public class Main {
         System.out.println("Игроки попросившие номер первыми: " + map.toString());
     }
 
-    public static void inputAndArray() {
+    public static String inputAndArray() {
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine().trim();
         String[] strA = str.split(" ");
@@ -35,7 +34,10 @@ public class Main {
             number = Integer.parseInt(strA[0]);
         } catch (ArrayIndexOutOfBoundsException | NumberFormatException a) {
             System.out.println("введите номер и имя игрока!");
+            return inputAndArray();
         }
         whoWillGet(name, number);
+        return str;  //можно без return, но тогда после ввода ексепшна будет захватывать в ХешМавпу 0 и null(0) из
+                    // name и number
     }
 }
