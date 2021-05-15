@@ -9,13 +9,10 @@ public class Main {
 
     public static void main(String[] args) {
         while (true) {
-            try {
-                inputAndArray();
-            } catch (ArrayIndexOutOfBoundsException | NumberFormatException a) {
-            }
-            System.out.println("введите номер и имя игрока!");
+            inputAndArray();
         }
     }
+
 
     private static void whoWillGet(String name, int number) {
         map1.put(number, name);
@@ -31,8 +28,14 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine().trim();
         String[] strA = str.split(" ");
-        String name = strA[1];
-        int number = Integer.parseInt(strA[0]);
+        String name = null;
+        int number = 0;
+        try {
+            name = strA[1];
+            number = Integer.parseInt(strA[0]);
+        } catch (ArrayIndexOutOfBoundsException | NumberFormatException a) {
+            System.out.println("введите номер и имя игрока!");
+        }
         whoWillGet(name, number);
     }
 }
