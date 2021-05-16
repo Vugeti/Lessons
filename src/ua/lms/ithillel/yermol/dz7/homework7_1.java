@@ -3,7 +3,7 @@ package ua.lms.ithillel.yermol.dz7;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class homework7_2 {
+public class homework7_1 {
 
     public static void main(String[] args) {
         int number = inputInteger();
@@ -11,10 +11,10 @@ public class homework7_2 {
     }
 
     public static int inputInteger() {
-        System.out.println("Введите цифру от 0-9999");
+        System.out.println("enter a number 0-9999");
         Scanner input = new Scanner(System.in);
-        if (input.hasNextInt()) {
-            return input.nextInt();
+        if (input.hasNextInt()) {     //здесь можно зделать try-catch, но я когда сделал,
+            return input.nextInt();   // то return показался не таким громоздким и функционала прибавил
         } else {
             return inputInteger();
         }
@@ -23,8 +23,8 @@ public class homework7_2 {
     public static void converterToWord(int number) {
         HashMap<Integer, String> hashMonkey1000 = new HashMap<>();
         HashMap<Integer, String> hashMonkey100 = new HashMap<>();
-        HashMap<Integer, String> hashMonkey11_19 = new HashMap<>();
         HashMap<Integer, String> hashMonkey10 = new HashMap<>();
+        HashMap<Integer, String> hashMonkey11_19 = new HashMap<>();
         HashMap<Integer, String> hashMonkey1 = new HashMap<>();
 
         hashMonkey1.put(1, "one");

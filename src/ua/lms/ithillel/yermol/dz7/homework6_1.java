@@ -3,7 +3,7 @@ package ua.lms.ithillel.yermol.dz7;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class homework7_1 {
+public class homework6_1 {
     static HashMap<Integer, String> map = new HashMap<>();
     static HashMap<Integer, String> map1 = new HashMap<>();
 
